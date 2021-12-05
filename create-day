@@ -2,7 +2,7 @@
 
 input=$1
 
-. .cookie
+AOC_COOKIE=`cat .cookie`
 
 if [ -z "$input" ]; then
 	echo "Please provide an argument"
@@ -22,7 +22,6 @@ sed -i "/^executables:/a $package_input" package.yaml
 target_input="inputs/day${input}.txt"
 url="https://adventofcode.com/2021/day/${input}/input"
 curl -o $target_input -b "$AOC_COOKIE" $url
-git add $target_input
 
 echo "module Main where
 
@@ -36,4 +35,3 @@ solve2 = solve1
 
 main :: IO()
 main = mainWrapper \"day${input}\" solve1 solve2" >> $FILE
-git add $FILE
