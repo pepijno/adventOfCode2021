@@ -34,10 +34,10 @@ linePoints (Line (x1, y1) (x2, y2))
   | otherwise = zip (range x1 x2) (range y1 y2)
 
 solve1 :: [String] -> Int
-solve1 = M.size . M.filter (>1) . M.fromListWith (+) . map ((,1)) . concatMap linePoints . filter isStraightLine . map (unsafeParse parseLine)
+solve1 = M.size . M.filter (>1) . M.fromListWith (+) . map (,1) . concatMap linePoints . filter isStraightLine . map (unsafeParse parseLine)
 
 solve2 :: [String] -> Int
-solve2 = M.size . M.filter (>1) . M.fromListWith (+) . map ((,1)) . concatMap (linePoints . unsafeParse parseLine)
+solve2 = M.size . M.filter (>1) . M.fromListWith (+) . map (,1) . concatMap (linePoints . unsafeParse parseLine)
 
 main :: IO()
 main = mainWrapper "day5" solve1 solve2
