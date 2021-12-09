@@ -21,11 +21,11 @@ data Dir8 = N | NE | E | SE | S | SW | W | NW deriving (Show, Eq, Enum, Ord, Bou
 (!*) i (x, y) = (i * x, i * y)
 
 dir4, dir8 :: [(Int, Int)]
-dir4 = [(-1, 0), (1, 0), (-1, 0), (1, 0)]
+dir4 = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 dir8 = [(-1, 0), (-1, 1), (0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1)]
 
 enumerate :: forall a . (Bounded a, Enum a) => [a]
-enumerate = enumFrom (minBound @a)
+enumerate = [minBound..]
 
 dir4toCoord :: Dir4 -> Coord
 dir4toCoord d = M.fromList (zip enumerate dir4) M.! d
@@ -48,6 +48,9 @@ move dirToCoord = foldr (flip (step dirToCoord))
 parseGrid :: (Char -> a) -> [String] -> Grid a
 parseGrid cellParser xs = M.map cellParser m
   where m = M.fromList [((row, col), b) | (row, line) <- zip [0 ..] xs, (col, b) <- zip [0 ..] line]
+
+neighbours :: [(Int, Int)] -> Grid a -> Coord -> [Coord]
+neighbours dirs grid x = filter (`M.member` grid) $ map (!+ x) dirs
 
 rotate90Clockwise :: Coord -> Coord
 rotate90Clockwise (a, b) = (b, (-1) * a)
