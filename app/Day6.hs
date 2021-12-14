@@ -22,7 +22,7 @@ stepFish fish = S.fromList
   | i <- [0..8]]
 
 fishAtDay :: Int -> S.Seq Int -> Int
-fishAtDay day = sum . (!! day) . iterate stepFish
+fishAtDay day = sum . nSteps day stepFish
 
 solve1 :: [String] -> Int
 solve1 = fishAtDay 80 . countFish . parseFish

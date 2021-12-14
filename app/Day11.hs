@@ -41,7 +41,7 @@ doStep grid = snd $ until (M.null . fst) m (f'', r')
                in  (f, ripple (flashNeighbours grid f) (drain r))
 
 solve1 :: [String] -> Int
-solve1 xs = fst $ flip (!!) 100 $ iterate step (0, grid)
+solve1 xs = fst $ nSteps 100 step (0, grid)
   where
     grid = parseGrid digitToInt xs
     step (s, p) = let p' = doStep p
