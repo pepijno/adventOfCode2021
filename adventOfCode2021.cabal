@@ -46,6 +46,7 @@ library
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -70,6 +71,7 @@ executable day1
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -94,6 +96,7 @@ executable day10
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -118,6 +121,7 @@ executable day11
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -142,6 +146,7 @@ executable day12
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -166,6 +171,7 @@ executable day13
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -190,6 +196,32 @@ executable day14
     , extra
     , hashable
     , parsec
+    , pqueue
+    , split
+    , vector
+  default-language: Haskell2010
+
+executable day15
+  main-is: Day15.hs
+  hs-source-dirs:
+      app
+  default-extensions:
+      TypeApplications
+      LambdaCase
+      FlexibleContexts
+  ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adjunctions
+    , adventOfCode2021
+    , array
+    , base >=4.7 && <5
+    , comonad
+    , containers
+    , distributive
+    , extra
+    , hashable
+    , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -214,6 +246,7 @@ executable day2
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -238,6 +271,7 @@ executable day3
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -262,6 +296,7 @@ executable day4
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -286,6 +321,7 @@ executable day5
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -310,6 +346,7 @@ executable day6
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -334,6 +371,7 @@ executable day7
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -358,6 +396,7 @@ executable day8
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -382,6 +421,7 @@ executable day9
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
@@ -407,6 +447,7 @@ test-suite adventOfCode2021-test
     , extra
     , hashable
     , parsec
+    , pqueue
     , split
     , vector
   default-language: Haskell2010
