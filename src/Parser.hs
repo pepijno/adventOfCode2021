@@ -16,6 +16,7 @@ module Parser
     many1,
     munch,
     munch1,
+    takeN,
     between,
     choice,
     optional,
@@ -120,6 +121,11 @@ manyUntil :: Parser a -> Parser b -> Parser [a]
 manyUntil p un = scan
   where
     scan = (un >> return []) <| liftM2 (:) p scan
+
+takeN :: Int -> Parser a -> Parser [a]
+takeN n p
+  | n <= 0 = return []
+  | otherwise = sequence (replicate n p)
 
 eof :: Parser ()
 eof = Parser $ \case
