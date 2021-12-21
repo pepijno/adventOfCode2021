@@ -48,6 +48,7 @@ library
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -73,6 +74,7 @@ executable day1
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -98,6 +100,7 @@ executable day10
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -123,6 +126,7 @@ executable day11
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -148,6 +152,7 @@ executable day12
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -173,6 +178,7 @@ executable day13
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -198,6 +204,7 @@ executable day14
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -223,6 +230,7 @@ executable day15
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -248,6 +256,7 @@ executable day16
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -273,6 +282,7 @@ executable day17
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -298,6 +308,7 @@ executable day18
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -323,6 +334,7 @@ executable day19
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -348,6 +360,7 @@ executable day2
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -373,6 +386,33 @@ executable day20
     , parsec
     , pqueue
     , split
+    , timeit
+    , vector
+  default-language: Haskell2010
+
+executable day21
+  main-is: Day21.hs
+  hs-source-dirs:
+      app
+  default-extensions:
+      TypeApplications
+      LambdaCase
+      FlexibleContexts
+  ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adjunctions
+    , adventOfCode2021
+    , array
+    , base >=4.7 && <5
+    , comonad
+    , containers
+    , distributive
+    , extra
+    , hashable
+    , parsec
+    , pqueue
+    , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -398,6 +438,7 @@ executable day3
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -423,6 +464,7 @@ executable day4
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -448,6 +490,7 @@ executable day5
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -473,6 +516,7 @@ executable day6
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -498,6 +542,7 @@ executable day7
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -523,6 +568,7 @@ executable day8
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -548,6 +594,7 @@ executable day9
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010
 
@@ -574,5 +621,6 @@ test-suite adventOfCode2021-test
     , parsec
     , pqueue
     , split
+    , timeit
     , vector
   default-language: Haskell2010

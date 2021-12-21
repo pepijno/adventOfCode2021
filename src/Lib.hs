@@ -13,12 +13,13 @@ where
 
 import Control.Arrow
 import Data.List.Split
+import System.TimeIt
 
 mainWrapper :: (Show a, Show b) => String -> ([String] -> a) -> ([String] -> b) -> IO ()
 mainWrapper file f1 f2 = do
   contents <- lines <$> readFile ("./inputs/" ++ file ++ ".txt")
-  print $ f1 contents
-  print $ f2 contents
+  timeIt $ print $ f1 contents
+  timeIt $ print $ f2 contents
 
 inRange :: (Ord a) => a -> a -> a -> Bool
 inRange v min max = min <= v && v <= max

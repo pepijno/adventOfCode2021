@@ -31,6 +31,7 @@ dependencies:
 - parsec
 - array
 - pqueue
+- timeit
 
 library:
   source-dirs: src
@@ -47,6 +48,9 @@ _exe-defs: &exe-defaults
   - -with-rtsopts=-N
 
 executables:
+  day21:
+    main: Day21.hs
+    <<: *exe-defaults
   day20:
     main: Day20.hs
     <<: *exe-defaults
